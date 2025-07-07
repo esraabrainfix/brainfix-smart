@@ -6,6 +6,7 @@
   <title>🧠 Brain Fix | Smart Therapy for Kids</title>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
   <style>
+    * { box-sizing: border-box; scroll-behavior: smooth; }
     body {
       margin: 0;
       font-family: 'Cairo', sans-serif;
@@ -16,20 +17,37 @@
     header {
       background-color: #0b6efd;
       color: white;
-      padding: 30px 20px;
+      padding: 40px 20px;
+    }
+    .header-container {
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
-      justify-content: space-between;
+      justify-content: center;
+      max-width: 1200px;
+      margin: auto;
     }
-    header img {
-      height: 60px;
-      margin-right: 20px;
+    .header-text {
+      flex: 1 1 400px;
+      padding: 20px;
     }
-    header h1 {
-      margin: 0;
-      font-size: 2.2em;
-      flex-grow: 1;
+    .header-text h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+    .header-text p {
+      font-size: 1.1em;
+      margin: 10px 0;
+    }
+    .header-image {
+      flex: 1 1 300px;
       text-align: center;
+    }
+    .header-image img {
+      max-width: 250px;
+      width: 90%;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
     }
     nav {
       background-color: #084bbb;
@@ -37,26 +55,32 @@
       justify-content: center;
       gap: 20px;
       padding: 10px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
     }
     nav a {
       color: white;
       text-decoration: none;
       font-weight: bold;
     }
+    nav a:hover {
+      text-decoration: underline;
+    }
     section {
       padding: 50px 20px;
       text-align: center;
     }
     .btn {
-      background-color: #0b6efd;
-      color: white;
-      padding: 12px 25px;
-      border: none;
+      background-color: white;
+      color: #0b6efd;
+      padding: 10px 20px;
       border-radius: 8px;
-      font-size: 1em;
+      border: none;
+      font-weight: bold;
       text-decoration: none;
       display: inline-block;
-      margin-top: 20px;
+      margin-top: 15px;
     }
     footer {
       background: #ddd;
@@ -64,17 +88,35 @@
       padding: 20px;
       font-size: 0.9em;
     }
+    ul {
+      max-width: 700px;
+      margin: auto;
+      text-align: left;
+      padding-left: 20px;
+    }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>🧠 Brain Fix</h1>
+    <div class="header-container">
+      <div class="header-text">
+        <h1>🧠 Brain Fix</h1>
+        <p>Smart, Affordable & Fun Therapy for Kids with Cerebral Palsy</p>
+        <p>
+          We are building the world’s first therapy system combining immersive VR, smart suits, mirror therapy, and AI-powered games — to make therapy measurable, engaging, and fun.
+        </p>
+        <a href="#contact" class="btn">Get in Touch</a>
+      </div>
+      <div class="header-image">
+        <img src="https://cdn-icons-png.flaticon.com/512/4241/4241349.png" alt="Brain VR Icon">
+      </div>
+    </div>
   </header>
 
   <nav>
     <a href="#about">About</a>
-    <a href="#problem">Problem & Solution</a>
+    <a href="#problem">Problem</a>
     <a href="#tech">Technology</a>
     <a href="#team">Team</a>
     <a href="#contact">Contact</a>
@@ -82,7 +124,39 @@
 
   <section id="about">
     <h2>About Us</h2>
-    <p>Brain Fix pioneers the next generation of pediatric neurorehabilitation.</p>
+    <p>Brain Fix pioneers the next generation of pediatric neurorehabilitation using interactive technologies and smart design.</p>
+  </section>
+
+  <section id="problem">
+    <h2>Problem & Solution</h2>
+    <p>Over 17 million children suffer from cerebral palsy globally. Traditional therapy is expensive, boring, and hard to access. Brain Fix solves that with a smart, fun, and measurable solution.</p>
+  </section>
+
+  <section id="tech">
+    <h2>Our Technology</h2>
+    <ul>
+      <li>🕶️ Immersive VR Therapy</li>
+      <li>🎯 Real-time Motion Sensors</li>
+      <li>🪞 Virtual Mirror Therapy</li>
+      <li>🎮 Adaptive Gamification</li>
+    </ul>
+  </section>
+
+  <section id="team">
+    <h2>Our Team</h2>
+    <p>
+      • Eng. Abdelaliem Abdelrahman – Mentor<br>
+      • Israa Abdelnasser – Strategy & Operations<br>
+      • Abdullah Hazem – Lead Developer<br>
+      • Mariam Abbas – Data Analyst<br>
+      • Dina Farag – Medical Advisor
+    </p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: brainfix.eg@gmail.com</p>
+    <p>GitHub: <a href="https://github.com/esraabrainfix" target="_blank">esraabrainfix</a></p>
   </section>
 
   <footer>
