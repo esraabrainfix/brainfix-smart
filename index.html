@@ -45,6 +45,15 @@
       50% { transform: translateY(-10px); }
     }
 
+    @keyframes glow {
+      0%, 100% { 
+        box-shadow: 0 8px 25px rgba(0,0,0,0.3), 0 0 20px rgba(11, 110, 253, 0.3);
+      }
+      50% { 
+        box-shadow: 0 8px 25px rgba(0,0,0,0.4), 0 0 30px rgba(11, 110, 253, 0.6);
+      }
+    }
+
     .animate-on-scroll {
       animation: fadeInUp 0.8s ease-out;
     }
@@ -106,15 +115,17 @@
     }
 
     .header-image img {
-      max-width: 280px;
+      max-width: 300px;
       width: 90%;
       border-radius: 20px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
-      transition: transform 0.3s ease;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.3), 0 0 20px rgba(11, 110, 253, 0.3);
+      transition: all 0.3s ease;
+      animation: glow 2s ease-in-out infinite;
     }
 
     .header-image img:hover {
       transform: scale(1.05);
+      box-shadow: 0 12px 35px rgba(0,0,0,0.4), 0 0 40px rgba(11, 110, 253, 0.5);
     }
 
     /* Navigation */
@@ -369,7 +380,7 @@
         <a href="#contact" class="btn">Get Started Now</a>
       </div>
       <div class="header-image">
-        <img src="https://images.unsplash.com/photo-1592478411213-6153e4ebc696?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="VR headset virtual reality device">
+        <img src="https://images.unsplash.com/photo-1593508512255-86ab42a8e620?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="نظارة الواقع الافتراضي الطبية - Medical VR headset for therapy">
       </div>
     </div>
   </header>
@@ -531,4 +542,4 @@
     });
   </script>
 </body>
-        </html>
+  </html>
