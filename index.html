@@ -5,7 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>🧠 Brain Fix | Smart Therapy for Kids</title>
   <meta name="description" content="Brain Fix - VR-based therapy for kids with cerebral palsy. Innovative, fun, and measurable rehab." />
+  <meta name="keywords" content="VR therapy, cerebral palsy, pediatric rehabilitation, brain fix, virtual reality therapy, children therapy, neurorehabilitation">
+  <meta property="og:title" content="Brain Fix - VR Therapy for Kids with Cerebral Palsy">
+  <meta property="og:description" content="Revolutionary VR therapy system for children with cerebral palsy. Making therapy fun, measurable, and accessible.">
+  <meta property="og:image" content="https://images.pexels.com/photos/7046686/pexels-photo-7046686.jpeg">
+  <meta property="og:url" content="https://brainfix.com">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>" />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Cairo:wght@400;700&display=swap" as="style">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Cairo:wght@400;700&display=swap" rel="stylesheet">
   <style>
     * { 
@@ -52,6 +58,11 @@
       50% { 
         box-shadow: 0 8px 25px rgba(0,0,0,0.4), 0 0 30px rgba(11, 110, 253, 0.6);
       }
+    }
+
+    @keyframes countUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     .animate-on-scroll {
@@ -228,6 +239,109 @@
       font-size: 1.3em;
     }
 
+    /* Statistics Section */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .stat-card {
+      background: linear-gradient(135deg, #0b6efd 0%, #084bbb 100%);
+      color: white;
+      padding: 40px 20px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(11, 110, 253, 0.3);
+      transition: all 0.3s ease;
+      animation: countUp 1s ease-out;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(11, 110, 253, 0.4);
+    }
+
+    .stat-card h3 {
+      font-size: 3em;
+      margin-bottom: 10px;
+      font-weight: 700;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+
+    .stat-card p {
+      font-size: 1.2em;
+      margin: 0;
+      opacity: 0.95;
+    }
+
+    /* FAQ Section */
+    .faq-container {
+      max-width: 800px;
+      margin: 40px auto;
+      text-align: left;
+    }
+
+    .faq-item {
+      background: white;
+      margin-bottom: 20px;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .faq-item:hover {
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+
+    .faq-question {
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      padding: 20px;
+      cursor: pointer;
+      border: none;
+      width: 100%;
+      text-align: left;
+      font-weight: 600;
+      font-size: 1.1em;
+      color: #0b6efd;
+      transition: all 0.3s ease;
+    }
+
+    .faq-question:hover {
+      background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%);
+    }
+
+    .faq-question::after {
+      content: '+';
+      float: right;
+      font-size: 1.5em;
+      font-weight: bold;
+      transition: transform 0.3s ease;
+    }
+
+    .faq-question.active::after {
+      transform: rotate(45deg);
+    }
+
+    .faq-answer {
+      padding: 0 20px;
+      max-height: 0;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .faq-answer.active {
+      padding: 20px;
+      max-height: 200px;
+    }
+
+    .faq-answer p {
+      margin: 0;
+      color: #555;
+      line-height: 1.6;
+    }
+
     /* Team Section */
     .team-grid {
       display: grid;
@@ -308,20 +422,6 @@
       transform: scale(1.2);
     }
 
-    /* Awards Section */
-    .awards {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-      padding: 50px 20px;
-      margin: 40px 0;
-      border-radius: 20px;
-    }
-
-    .awards h3 {
-      font-size: 2em;
-      margin-bottom: 20px;
-    }
-
     /* Responsive Design */
     @media (max-width: 768px) {
       .header-text h1 {
@@ -351,6 +451,14 @@
       
       .team-grid {
         grid-template-columns: 1fr;
+      }
+      
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .stat-card h3 {
+        font-size: 2.5em;
       }
     }
 
@@ -388,24 +496,44 @@
   <nav>
     <a href="#about" class="nav-link">About</a>
     <a href="#problem" class="nav-link">Problem</a>
+    <a href="#results" class="nav-link">Results</a>
     <a href="#tech" class="nav-link">Technology</a>
+    <a href="#faq" class="nav-link">FAQ</a>
     <a href="#team" class="nav-link">Team</a>
     <a href="#contact" class="nav-link">Contact</a>
   </nav>
 
   <section id="about" class="animate-on-scroll">
     <h2>About Us</h2>
-    <p>Brain Fix pioneers the next generation of pediatric neurorehabilitation using interactive technologies and smart design. We believe every child deserves access to the best therapy tools available. <strong>🏆 Top 6 in Halt Prize</strong> - recognized for our innovative approach to making therapy accessible and effective.</p>
+    <p>Brain Fix pioneers the next generation of pediatric neurorehabilitation using interactive technologies and smart design. We believe every child deserves access to the best therapy tools available.</p>
   </section>
 
   <section id="problem" class="animate-on-scroll">
     <h2>Problem & Solution</h2>
     <p>Over 17 million children suffer from cerebral palsy globally. Traditional therapy is expensive, boring, and hard to access. Brain Fix solves that with a smart, fun, and measurable solution that makes therapy feel like play.</p>
     
-    <div class="awards">
-      <h3>🏆 Recognition</h3>
-      <p>"This innovative approach is revolutionizing pediatric rehabilitation" - Medical Innovation Awards 2024</p>
+    <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 50px 20px; margin: 40px 0; border-radius: 20px;">
+      <h3 style="font-size: 2em; margin-bottom: 20px;">🏆 Recognition</h3>
       <p><strong>Top 6 in Halt Prize</strong> - Recognized among the leading healthcare innovation solutions</p>
+    </div>
+  </section>
+
+  <section id="results" class="animate-on-scroll">
+    <h2>Our Test Results</h2>
+    <p>The results from our testing show amazing improvements in therapy outcomes.</p>
+    <div class="stats-grid">
+      <div class="stat-card">
+        <h3>70%</h3>
+        <p>Improvement in Therapy Adherence</p>
+      </div>
+      <div class="stat-card">
+        <h3>35%</h3>
+        <p>Reduction in Rehabilitation Time</p>
+      </div>
+      <div class="stat-card">
+        <h3>💰</h3>
+        <p>Much Lower Cost vs Traditional Methods</p>
+      </div>
     </div>
   </section>
 
@@ -427,6 +555,36 @@
       <div class="tech-card">
         <h3>🎮 Adaptive Gamification</h3>
         <p>AI-powered games that adapt to each child's abilities and progress, keeping them motivated and engaged.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="animate-on-scroll">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-container">
+      <div class="faq-item">
+        <button class="faq-question">What makes Brain Fix different from traditional rehabilitation?</button>
+        <div class="faq-answer">
+          <p>Brain Fix combines immersive VR therapy, smart motion sensors, and robotic sports assistants to create an engaging, pain-free rehabilitation experience. Unlike traditional methods, our approach provides real-time data tracking and adaptive therapy protocols.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Is the system safe for children with cerebral palsy?</button>
+        <div class="faq-answer">
+          <p>Yes, our system is specifically designed for children with safety as our top priority. We use age-appropriate content, include smart sensors for monitoring, and have been tested with pediatric physiotherapists who confirmed its clinical safety.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">How do you measure and track progress?</button>
+        <div class="faq-answer">
+          <p>Our system uses advanced motion capture technology and smart sensors to collect objective data on muscle activation patterns. This provides quantifiable progress metrics and allows for precise therapy adjustments based on performance.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">What age range is Brain Fix suitable for?</button>
+        <div class="faq-answer">
+          <p>Brain Fix is designed for children aged 2-6 years with neurological conditions like cerebral palsy. Our adaptive system automatically adjusts therapy parameters based on each child's abilities and developmental stage.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -540,6 +698,64 @@
     sections.forEach(section => {
       observer.observe(section);
     });
+
+    // FAQ functionality
+    document.querySelectorAll('.faq-question').forEach(question => {
+      question.addEventListener('click', function() {
+        const answer = this.nextElementSibling;
+        const isActive = answer.classList.contains('active');
+        
+        // Close all other FAQ items
+        document.querySelectorAll('.faq-answer').forEach(item => {
+          item.classList.remove('active');
+        });
+        document.querySelectorAll('.faq-question').forEach(item => {
+          item.classList.remove('active');
+        });
+        
+        // Toggle current item
+        if (!isActive) {
+          answer.classList.add('active');
+          this.classList.add('active');
+        }
+      });
+    });
+
+    // Number animation for stats
+    function animateNumbers() {
+      const statCards = document.querySelectorAll('.stat-card h3');
+      statCards.forEach(card => {
+        const target = card.textContent;
+        if (target.includes('%')) {
+          const num = parseInt(target);
+          let current = 0;
+          const increment = num / 100;
+          const timer = setInterval(() => {
+            current += increment;
+            if (current >= num) {
+              current = num;
+              clearInterval(timer);
+            }
+            card.textContent = Math.floor(current) + '%';
+          }, 20);
+        }
+      });
+    }
+
+    // Trigger number animation when results section is visible
+    const resultsSection = document.getElementById('results');
+    const resultsObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateNumbers();
+          resultsObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    if (resultsSection) {
+      resultsObserver.observe(resultsSection);
+    }
   </script>
 </body>
-                                                                         </html>
+  </html>
